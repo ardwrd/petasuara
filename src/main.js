@@ -38,9 +38,16 @@ function areaColor(name) {
   const candidate=Number(state.metric);
   return mix(presidential.candidates[candidate].color,.16+.84*values[candidate]/sum(values));
 }
+function clearProvinceSelection() {
+  if(state.mode!=='pilpres'||!state.selected)return;
+  state.selected=null;
+  state.hovered=null;
+  render();
+}
 function selectProvince(name) {
   if(state.mode==='dpr')return;
-  state.selected=state.selected===name?null:name;state.hovered=null;render();
+  if(state.selected===name){clearProvinceSelection();return;}
+  state.selected=name;state.hovered=null;render();
 }
 for(const geometry of geometries) {
   const name=geometry.properties.PROVINSI;
@@ -111,6 +118,7 @@ function render(){
     tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;
   });
   $('metric').disabled=state.mode==='dpr';
+  $('clear-selection').hidden=state.mode!=='pilpres'||!state.selected;
   $('map-title').textContent=state.mode==='pilpres'?'Persebaran suara Pilpres':'Hasil suara DPR RI nasional';
   $('map-hint').textContent=state.mode==='pilpres'?'Arahkan kursor atau pilih provinsi untuk melihat hasil.':'Data partai per provinsi belum dimuat; peta netral.';
   $('source-tag').textContent=state.mode==='pilpres'?'KPU · 360/2024':'KPU · 1204/2024';
@@ -128,4 +136,10 @@ document.querySelectorAll('[data-mode]').forEach(button=>{
   });
 });
 $('metric').addEventListener('change',event=>{state.metric=event.target.value;render();});
+$('clear-selection').addEventListener('click',clearProvinceSelection);
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&state.mode==='pilpres'&&state.selected){
+    clearProvinceSelection();
+  }
+});
 render();
