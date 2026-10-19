@@ -1,9 +1,18 @@
 import { geoMercator, geoPath } from 'd3-geo';
 import { feature } from 'topojson-client';
-import presidential from '../data/pilpres-2024.json';
-import parties from '../data/dpr-ri-2024.json';
-import topology from '../data/indonesia-38-provinces.topo.json';
-import './styles.css';
+// Resolve JSON against the module directory in both branch mode (/src)
+// and the Vite build (/assets), so either deployment source works.
+async function readJson(path) {
+  const response = await fetch(new URL(path, import.meta.url));
+  if (!response.ok) throw new Error('Failed to load ' + path + ': HTTP ' + response.status);
+  return response.json();
+}
+
+const [presidential, parties, topology] = await Promise.all([
+  readJson('../data/pilpres-2024.json'),
+  readJson('../data/dpr-ri-2024.json'),
+  readJson('../data/indonesia-38-provinces.topo.json')
+]);
 
 const $ = id => document.getElementById(id);
 const fmt = new Intl.NumberFormat('id-ID');

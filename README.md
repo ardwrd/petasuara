@@ -16,7 +16,17 @@ Persyaratan Node.js 20+.
     npm run build
 
 ## Deploy ke GitHub Pages
-Workflow deploy akan dijalankan setelah merge ke main. Di Settings → Pages → Source, pilih **GitHub Actions**. Alamat target: https://ardwrd.github.io/petasuara/
+Workflow deploy membangun aplikasi saat perubahan masuk ke `main`. Pengaturan yang direkomendasikan: **Settings → Pages → Source → GitHub Actions**.
+Alamat target: https://ardwrd.github.io/petasuara/
+
+Aplikasi juga dapat berjalan jika Pages masih dalam mode **Deploy from a branch** (`main`/`root`):
+- `index.html` memuat CSS melalui path relatif `./src/styles.css`.
+- Import map menyediakan dependensi ES modules untuk situs statis tanpa bundler.
+- Dataset dibaca langsung dari `/data/` dengan path relatif.
+- Dalam mode GitHub Actions, Vite membundel JavaScript/CSS dan menyalin JSON ke `dist/data/`.
+
+Pilih satu mode deploy saja dalam pengaturan Pages untuk menghindari saling menimpa deployment.
+
 
 ## Sumber
 - Pilpres: KPU 360/2024; [transkripsi Zonautara](https://zonautara.com/dataset/sebaran-suara-pilpres-2024-di-semua-provinsi/).
