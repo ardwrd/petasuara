@@ -60,13 +60,12 @@ function clearProvinceSelection() {
   if(state.mode!=='pilpres'||!state.selected)return;
   state.selected=null;
   state.hovered=null;
-  provinceSelect.value='';
   render();
 }
 function selectProvince(name) {
   if(state.mode==='dpr')return;
   if(state.selected===name){clearProvinceSelection();return;}
-  state.selected=name;state.hovered=null;render();centerProvinceInView(name);
+  state.selected=name;state.hovered=null;render();
 }
 for(const geometry of geometries) {
   const name=geometry.properties.PROVINSI;
@@ -148,7 +147,7 @@ function render(){
 }
 provinceSelect.addEventListener('change', (event) => {
   if (!event.target.value) clearProvinceSelection();
-  else selectProvince(event.target.value);
+  else { selectProvince(event.target.value); centerProvinceInView(event.target.value); }
 });
 document.querySelectorAll('[data-mode]').forEach(button=>{
   button.addEventListener('click',()=>{state.mode=button.dataset.mode;state.selected=null;state.hovered=null;render();});
