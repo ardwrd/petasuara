@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf9f3"><meta name="description" content="PetaSuara: peta dan hasil resmi Pemilu Indonesia 2024">
+<title>PetaSuara — Jelajahi Data Pemilu</title>
+</head><body><a class="skip" href="#main">Lewati navigasi</a>
+<div class="container">
+<header class="topbar"><a href="./" class="logo"><span class="logo-icon">◈</span>Peta<span>Suara</span></a>
+<div class="header-links"><span>DATA PEMILU INDONESIA</span><a href="https://github.com/ardwrd/petasuara" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></header>
+<main id="main">
+<section class="hero"><div><p class="eyebrow"><span class="pin"></span> INDEPENDEN · OPEN SOURCE</p>
+<h1>Jelajahi suara,<br><em>pahami Indonesia.</em></h1>
+<p>Visualisasi hasil Pemilu Indonesia yang sederhana. Pilih provinsi dan lihat bagaimana suara tersebar.</p></div>
+<div class="hero-side"><strong>2024↗</strong><p>Hasil resmi pemilihan umum dari Komisi Pemilihan Umum.</p></div></section>
+<section class="explorer" aria-label="Visualisasi hasil Pemilu">
+<div class="toolbar"><div class="tabs" role="tablist" aria-label="Jenis pemilihan">
+<button class="tab active" data-mode="pilpres" role="tab" aria-selected="true">Pilpres</button>
+<button class="tab" data-mode="dpr" role="tab" aria-selected="false">DPR RI</button></div>
+<div class="toolbar-meta"><span class="year">Pemilu 2024</span><span id="source-tag">KPU · 360/2024</span></div></div>
+<div class="workspace">
+<section class="map-panel" aria-labelledby="map-title">
+<div class="map-heading"><div><p class="kicker">PETA PEROLEHAN SUARA</p><h2 id="map-title">Persebaran suara Pilpres</h2></div>
+<label class="metric-label">Warna peta<select id="metric"><option value="winner">Suara terbanyak</option><option value="0">01 · Anies–Muhaimin</option><option value="1">02 · Prabowo–Gibran</option><option value="2">03 · Ganjar–Mahfud</option></select></label></div>
+<div class="map-area"><div class="watermark" aria-hidden="true">INDONESIA</div>
+<svg id="map" viewBox="0 0 1040 500" aria-label="Peta interaktif provinsi Indonesia" role="group"></svg>
+<p id="map-hint">Klik provinsi untuk melihat hasil suara.</p></div>
+<div class="map-legend"><div id="legend"></div><span>38 PROVINSI</span></div></section>
+<aside class="results-panel" aria-live="polite" aria-atomic="true">
+<p class="kicker" id="results-kicker">HASIL PILPRES 2024</p>
+<h2 id="region-name">Seluruh Indonesia</h2><p class="results-help" id="results-help">Ringkasan suara sah nasional</p>
+<div class="total-box"><small id="total-label">TOTAL SUARA SAH</small><strong id="total-count">—</strong></div>
+<div id="vote-results" class="vote-results"></div>
+<p class="data-note" id="data-note">Jumlah nasional termasuk suara luar negeri.</p></aside></div>
+</section><p class="disclaimer">PetaSuara merupakan proyek independen; tidak berafiliasi dengan KPU, kandidat, atau partai politik. Bukan hitung cepat maupun prediksi.</p></main>
+<footer>© PetaSuara · <span>Sumber: <a id="kpu-link" href="https://jdih.kpu.go.id/" target="_blank" rel="noopener noreferrer">KPU</a> · <a href="https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces" target="_blank" rel="noopener noreferrer">Peta CC BY 4.0</a></span></footer>
+</div><script type="module" src="/src/main.js"></script></body></html>

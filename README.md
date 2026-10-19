@@ -1,18 +1,27 @@
 # PetaSuara
 
-Peta interaktif, data terbuka hasil pemilihan umum Indonesia. Proyek independen, tanpa afiliasi dengan KPU atau partai politik.
+Proyek independen untuk mengeksplorasi hasil Pemilu Indonesia lewat peta sederhana dan responsif.
 
-## Status
-Fondasi dataset Pilpres 2024: 38 provinsi + luar negeri, tiga pasangan calon, hasil suara sah nasional yang direkonsiliasi. Antarmuka menyusul di PR terpisah.
+## Tersedia
+- Pilpres 2024: peta interaktif 38 provinsi, perolehan tiga pasangan calon, filter intensitas warna.
+- DPR RI 2024: perolehan suara sah 18 partai **tingkat nasional** (KPU 1204/2024). Karena data suara partai per provinsi belum dimuat, peta DPR ditampilkan netral.
+- Dukungan keyboard, mobile, dan lisensi open source.
 
-## Validasi data
-```bash
-npm install
-npm test
-```
+## Mulai
+Persyaratan Node.js 20+.
 
-Angka didasarkan pada keputusan KPU Nomor 360 Tahun 2024; lihat [sumber dan lisensi data](docs/DATA_SOURCES.md).
+    npm install
+    npm run dev
+    npm test
+    npm run build
 
-**Atribusi peta:** [Indonesia GeoJSON & TopoJSON Maps (38 Provinces)](https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces) (CC BY 4.0).
+## Deploy ke GitHub Pages
+Workflow deploy akan dijalankan setelah merge ke main. Di Settings → Pages → Source, pilih **GitHub Actions**. Alamat target: https://ardwrd.github.io/petasuara/
 
-Lisensi kode: MIT.
+## Sumber
+- Pilpres: KPU 360/2024; [transkripsi Zonautara](https://zonautara.com/dataset/sebaran-suara-pilpres-2024-di-semua-provinsi/).
+- DPR RI: [KPU 1204/2024](https://jdih.kpu.go.id/data/data_kepkpu/2024kpt1204.pdf).
+- Peta: [Indonesia GeoJSON & TopoJSON Maps 38 Provinces (denyherianto)](https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces), **CC BY 4.0**.
+- Penjelasan lengkap: [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
+
+Kode berlisensi MIT, geometri peta mengikuti lisensi CC BY 4.0.

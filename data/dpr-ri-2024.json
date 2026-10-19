@@ -1,0 +1,104 @@
+{
+  "year": 2024,
+  "type": "dpr-ri",
+  "coverage": "nasional",
+  "source": {
+    "authority": "KPU",
+    "decision": "Keputusan KPU Nomor 1204 Tahun 2024, Lampiran",
+    "url": "https://jdih.kpu.go.id/data/data_kepkpu/2024kpt1204.pdf",
+    "transcription": "https://pasal.id/peraturan/permen/kepkpu-1204-2024"
+  },
+  "totalValidVotes": 151793293,
+  "parties": [
+    {
+      "number": 1,
+      "name": "PKB",
+      "votes": 16115358
+    },
+    {
+      "number": 2,
+      "name": "Gerindra",
+      "votes": 20071345
+    },
+    {
+      "number": 3,
+      "name": "PDI Perjuangan",
+      "votes": 25384673
+    },
+    {
+      "number": 4,
+      "name": "Golkar",
+      "votes": 23208488
+    },
+    {
+      "number": 5,
+      "name": "NasDem",
+      "votes": 14660328
+    },
+    {
+      "number": 6,
+      "name": "Buruh",
+      "votes": 972898
+    },
+    {
+      "number": 7,
+      "name": "Gelora",
+      "votes": 1282000
+    },
+    {
+      "number": 8,
+      "name": "PKS",
+      "votes": 12781241
+    },
+    {
+      "number": 9,
+      "name": "PKN",
+      "votes": 326803
+    },
+    {
+      "number": 10,
+      "name": "Hanura",
+      "votes": 1094599
+    },
+    {
+      "number": 11,
+      "name": "Garuda",
+      "votes": 406884
+    },
+    {
+      "number": 12,
+      "name": "PAN",
+      "votes": 10984639
+    },
+    {
+      "number": 13,
+      "name": "PBB",
+      "votes": 484487
+    },
+    {
+      "number": 14,
+      "name": "Demokrat",
+      "votes": 11283053
+    },
+    {
+      "number": 15,
+      "name": "PSI",
+      "votes": 4260108
+    },
+    {
+      "number": 16,
+      "name": "Perindo",
+      "votes": 1955131
+    },
+    {
+      "number": 17,
+      "name": "PPP",
+      "votes": 5878708
+    },
+    {
+      "number": 24,
+      "name": "Ummat",
+      "votes": 642550
+    }
+  ]
+}

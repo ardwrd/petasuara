@@ -1,21 +1,17 @@
-# Sumber dan metodologi data
+# Sumber data dan lisensi
 
 ## Pilpres 2024
-- Otoritas: Komisi Pemilihan Umum (KPU), Keputusan Nomor 360 Tahun 2024, Lampiran I (suara sah).
-- Transkripsi tingkat provinsi: [Zonautara](https://zonautara.com/dataset/sebaran-suara-pilpres-2024-di-semua-provinsi/) (diolah 22 Maret 2024).
-- Pemeriksaan silang nasional dan 38 provinsi: [Election.org, data Annex I KPU](https://election.org/country/indonesia/elections/2024/president).
-- Pemilih luar negeri dipisahkan dari 38 provinsi, agar jumlah suara sah nasional cocok. Rumus: jumlah nasional = jumlah 38 provinsi + suara luar negeri.
-- Angka menyatakan **suara sah kandidat**, bukan jumlah pemilih terdaftar atau tingkat partisipasi.
-- Jenis pemilihan atau periode lain tidak boleh diberi nilai sintetis.
+Sumber resmi: Keputusan KPU 360/2024 Lampiran I. [Transkripsi Zonautara](https://zonautara.com/dataset/sebaran-suara-pilpres-2024-di-semua-provinsi/) dan [pemeriksaan silang Election.org](https://election.org/country/indonesia/elections/2024/president).
+38 provinsi + 1 kelompok luar negeri. Data suara sah; bukan partisipasi pemilih.
 
-## Peta provinsi
-- Sumber geometri: [denyherianto/indonesia-geojson-topojson-maps-with-38-provinces](https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces), berlisensi [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- Atribusi: “Indonesia GeoJSON & TopoJSON Maps (38 Provinces)” oleh denyherianto, digunakan tanpa perubahan geometri (format JSON dipadatkan).
-- **Catatan penting:** kode `KODE_PROV` tidak unik di sejumlah provinsi Papua pada dataset asal. Join data **menggunakan `PROVINSI`**, bukan kode tersebut.
-- Geometri untuk eksplorasi data; bukan rujukan penetapan batas administratif atau yurisdiksi.
+## DPR RI 2024
+[Keputusan KPU 1204 Tahun 2024](https://jdih.kpu.go.id/data/data_kepkpu/2024kpt1204.pdf), Lampiran tertanggal 25 Agustus 2024; [salinan teks](https://pasal.id/peraturan/permen/kepkpu-1204-2024).
+Suara sah nasional seluruh 18 partai: **151.793.293**. Angka bisa berbeda dari publikasi revisi lain; seluruh data DPR di sini konsisten dengan KPU 1204/2024.
+Belum ada lapisan geografis DPR RI dalam versi ini. Peta DPR tidak mencerminkan hasil wilayah.
 
-## Memperbarui dataset
-1. Lacak nomor dan versi dokumen keputusan KPU.
-2. Catat format, tanggal ekstraksi, dan perubahan angka.
-3. Jalankan `npm test` untuk pemeriksaan 38 nama provinsi dan rekonsiliasi hasil nasional.
-4. Periksa kembali ke dokumen sumber sebelum menggabungkan PR.
+## Geometri 38 provinsi
+[denyherianto/indonesia-geojson-topojson-maps-with-38-provinces](https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Atribusi: “Indonesia GeoJSON & TopoJSON Maps (38 Provinces)” oleh denyherianto; isi geometrinya tidak diubah, hanya dipadatkan.
+Kode KODE_PROV dari sumber **tidak unik** untuk beberapa provinsi Papua; join menggunakan nama PROVINSI.
+
+## Validasi
+Jalankan `npm test` untuk rekonsiliasi suara, cakupan 38 provinsi dan 18 partai. Hindari mencampur angka keputusan KPU berbeda tanpa catatan versi.
