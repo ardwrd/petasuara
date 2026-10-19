@@ -23,6 +23,24 @@ const path = geoPath(mapProjection);
 const state = {mode:'pilpres', metric:'winner', selected:null, hovered:null};
 const svg = $('map');
 const elements = new Map();
+const provinceSelect = $('province-select');
+for (const name of [...provinceData.keys()].sort((a,b) => a.localeCompare(b,'id'))) {
+  const option = document.createElement('option');
+  option.value = name;
+  option.textContent = name;
+  provinceSelect.append(option);
+}
+function centerProvinceInView(name) {
+  const area = elements.get(name);
+  const scroller = $('map-scroll');
+  if (!area || scroller.scrollWidth <= scroller.clientWidth) return;
+  const b = area.getBBox();
+  const x = (b.x + b.width / 2) * scroller.scrollWidth / 1040;
+  scroller.scrollTo({
+    left: Math.max(0, x - scroller.clientWidth / 2),
+    behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+  });
+}
 const sum = data => data.reduce((a,b)=>a+b,0);
 const pct = (n,d) => d ? (100*n/d).toLocaleString('id-ID',{minimumFractionDigits:1,maximumFractionDigits:1})+'%' : '0%';
 function element(tag,cls,text) { const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node; }
@@ -118,13 +136,19 @@ function render(){
     tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;
   });
   $('metric').disabled=state.mode==='dpr';
+  provinceSelect.disabled=state.mode==='dpr';
+  provinceSelect.value=state.selected||'';
   $('clear-selection').hidden=state.mode!=='pilpres'||!state.selected;
   $('map-title').textContent=state.mode==='pilpres'?'Persebaran suara Pilpres':'Hasil suara DPR RI nasional';
-  $('map-hint').textContent=state.mode==='pilpres'?'Arahkan kursor atau pilih provinsi untuk melihat hasil.':'Data partai per provinsi belum dimuat; peta netral.';
+  $('map-hint').textContent=state.mode==='pilpres'?'Pilih provinsi atau geser peta pada layar kecil untuk menjelajahi wilayah.':'Perolehan suara partai per provinsi belum dimuat. Peta ditampilkan netral.';
   $('source-tag').textContent=state.mode==='pilpres'?'KPU · 360/2024':'KPU · 1204/2024';
   $('kpu-link').href=state.mode==='pilpres'?'https://jdih.kpu.go.id/':parties.source.url;
   updateMap();renderLegend();renderStats();
 }
+provinceSelect.addEventListener('change', (event) => {
+  if (!event.target.value) clearProvinceSelection();
+  else { selectProvince(event.target.value); centerProvinceInView(event.target.value); }
+});
 document.querySelectorAll('[data-mode]').forEach(button=>{
   button.addEventListener('click',()=>{state.mode=button.dataset.mode;state.selected=null;state.hovered=null;render();});
   button.addEventListener('keydown',event=>{
