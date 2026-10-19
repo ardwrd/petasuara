@@ -1,0 +1,345 @@
+{
+  "year": 2024,
+  "type": "pilpres",
+  "status": "hasil resmi",
+  "source": {
+    "authority": "Komisi Pemilihan Umum",
+    "decision": "Keputusan KPU Nomor 360 Tahun 2024, Lampiran I",
+    "url": "https://jdih.kpu.go.id/",
+    "transcription": "https://zonautara.com/dataset/sebaran-suara-pilpres-2024-di-semua-provinsi/",
+    "checkedAgainst": "https://election.org/country/indonesia/elections/2024/president"
+  },
+  "candidates": [
+    {
+      "number": 1,
+      "name": "Anies – Muhaimin",
+      "color": "#f4a63b"
+    },
+    {
+      "number": 2,
+      "name": "Prabowo – Gibran",
+      "color": "#5c9ae6"
+    },
+    {
+      "number": 3,
+      "name": "Ganjar – Mahfud",
+      "color": "#ed6674"
+    }
+  ],
+  "national": [
+    40971906,
+    96214691,
+    27040878
+  ],
+  "overseas": [
+    125110,
+    427871,
+    118385
+  ],
+  "provinces": [
+    {
+      "name": "Jawa Barat",
+      "votes": [
+        9099674,
+        16805854,
+        2820995
+      ]
+    },
+    {
+      "name": "Jawa Timur",
+      "votes": [
+        4492652,
+        16716603,
+        4434805
+      ]
+    },
+    {
+      "name": "Jawa Tengah",
+      "votes": [
+        2866373,
+        12096454,
+        7827335
+      ]
+    },
+    {
+      "name": "Sumatera Utara",
+      "votes": [
+        2339620,
+        4660408,
+        999528
+      ]
+    },
+    {
+      "name": "Banten",
+      "votes": [
+        2451383,
+        4035052,
+        720275
+      ]
+    },
+    {
+      "name": "DKI Jakarta",
+      "votes": [
+        2653762,
+        2692011,
+        1115138
+      ]
+    },
+    {
+      "name": "Sulawesi Selatan",
+      "votes": [
+        2003081,
+        3010726,
+        265948
+      ]
+    },
+    {
+      "name": "Sumatera Selatan",
+      "votes": [
+        997299,
+        3649651,
+        606681
+      ]
+    },
+    {
+      "name": "Lampung",
+      "votes": [
+        791892,
+        3554310,
+        764486
+      ]
+    },
+    {
+      "name": "Riau",
+      "votes": [
+        1400093,
+        1931113,
+        357298
+      ]
+    },
+    {
+      "name": "Nusa Tenggara Barat",
+      "votes": [
+        850539,
+        2154843,
+        241106
+      ]
+    },
+    {
+      "name": "Aceh",
+      "votes": [
+        2369534,
+        787024,
+        64677
+      ]
+    },
+    {
+      "name": "Kalimantan Barat",
+      "votes": [
+        718641,
+        1964183,
+        534450
+      ]
+    },
+    {
+      "name": "Sumatera Barat",
+      "votes": [
+        1744042,
+        1217314,
+        124044
+      ]
+    },
+    {
+      "name": "Nusa Tenggara Timur",
+      "votes": [
+        153446,
+        1798753,
+        958505
+      ]
+    },
+    {
+      "name": "Bali",
+      "votes": [
+        99233,
+        1454640,
+        1127134
+      ]
+    },
+    {
+      "name": "Daerah Istimewa Yogyakarta",
+      "votes": [
+        496280,
+        1269265,
+        741220
+      ]
+    },
+    {
+      "name": "Kalimantan Selatan",
+      "votes": [
+        849948,
+        1407684,
+        159950
+      ]
+    },
+    {
+      "name": "Kalimantan Timur",
+      "votes": [
+        448046,
+        1542346,
+        240143
+      ]
+    },
+    {
+      "name": "Jambi",
+      "votes": [
+        532605,
+        1438952,
+        234251
+      ]
+    },
+    {
+      "name": "Sulawesi Tengah",
+      "votes": [
+        386743,
+        1251313,
+        160594
+      ]
+    },
+    {
+      "name": "Sulawesi Utara",
+      "votes": [
+        119103,
+        1229069,
+        283796
+      ]
+    },
+    {
+      "name": "Sulawesi Tenggara",
+      "votes": [
+        361585,
+        1113344,
+        90727
+      ]
+    },
+    {
+      "name": "Kalimantan Tengah",
+      "votes": [
+        256811,
+        1097070,
+        158788
+      ]
+    },
+    {
+      "name": "Papua Pegunungan",
+      "votes": [
+        284184,
+        838382,
+        175956
+      ]
+    },
+    {
+      "name": "Bengkulu",
+      "votes": [
+        229681,
+        893499,
+        145570
+      ]
+    },
+    {
+      "name": "Kepulauan Riau",
+      "votes": [
+        370671,
+        641388,
+        140733
+      ]
+    },
+    {
+      "name": "Papua Tengah",
+      "votes": [
+        128577,
+        638616,
+        335089
+      ]
+    },
+    {
+      "name": "Maluku",
+      "votes": [
+        228557,
+        665371,
+        186395
+      ]
+    },
+    {
+      "name": "Kepulauan Bangka Belitung",
+      "votes": [
+        204348,
+        529883,
+        151109
+      ]
+    },
+    {
+      "name": "Sulawesi Barat",
+      "votes": [
+        223153,
+        533757,
+        62514
+      ]
+    },
+    {
+      "name": "Gorontalo",
+      "votes": [
+        227354,
+        504662,
+        41508
+      ]
+    },
+    {
+      "name": "Maluku Utara",
+      "votes": [
+        200459,
+        454943,
+        91293
+      ]
+    },
+    {
+      "name": "Papua",
+      "votes": [
+        67592,
+        378908,
+        178534
+      ]
+    },
+    {
+      "name": "Kalimantan Utara",
+      "votes": [
+        72065,
+        284209,
+        51451
+      ]
+    },
+    {
+      "name": "Papua Barat Daya",
+      "votes": [
+        48405,
+        209403,
+        99899
+      ]
+    },
+    {
+      "name": "Papua Barat",
+      "votes": [
+        37459,
+        172965,
+        120565
+      ]
+    },
+    {
+      "name": "Papua Selatan",
+      "votes": [
+        41906,
+        162852,
+        110003
+      ]
+    }
+  ]
+}
